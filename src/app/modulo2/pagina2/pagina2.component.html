@@ -1,1 +1,20 @@
-<p>pagina2 works!</p>
+{{nombre}}
+
+<form [formGroup]="formulario">
+<div>
+  <!-- <input type="text" [(ngModel)]="campoTexto"> -->
+  <input type="text" formControlName="texto">
+  <button (click)="cambiarNombre()">Cambiar nombre</button>
+</div>
+</form>
+
+
+<!-- <div *ngIf="campoTexto.length">
+  CampoTexto tiene contenido
+</div>
+
+
+
+ <ul *ngFor="let letra of campoTexto.split('')">
+  <li>{{letra}}</li>
+</ul> -->
