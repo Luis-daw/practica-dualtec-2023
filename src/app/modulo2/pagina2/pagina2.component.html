@@ -1,14 +1,59 @@
 {{nombre}}
 
 <form [formGroup]="formulario">
+    <!-- <input type="text" [(ngModel)]="campoTexto"> -->
+
 <div>
-  <!-- <input type="text" [(ngModel)]="campoTexto"> -->
-  <input type="text" formControlName="texto">
-  <button (click)="cambiarNombre()">Cambiar nombre</button>
+  <div>
+    <label for="texto">Texto</label>
+    <input type="text" formControlName="texto">
+  </div>
+  <!-- <div>
+    <label for="tlf">Telefono</label>
+    <input type="text" formControlName="tlf">
+  </div> -->
+  <div>
+    <!-- <label for="correo">Correo</label>
+    <input type="text" formControlName="correo"> -->
+    <span class="campo-error" *ngIf="!formulario.get('correo')?.valid">El campo correo no es correcto</span>
+  </div>
+  <button (click)="cambiarNombre()" [disabled]="!formulario.valid">Cambiar nombre</button>
+  Formulario valido: {{formulario.valid}}
 </div>
 </form>
+<div class="empezar">
+  Comienzo del div
+</div>
+<div class="divs-colores ejemplo">
 
+  <div class="empezar">
+    Comienzo del div
+  </div>
+  <div class="empezar">
+    Comienzo del div
+  </div>
+  <div class="empezar">
+    Comienzo del div
+  </div>
+  <div class="empezar">
+    Comienzo del div
+  </div>
+</div>
+<div>
+  Cambio de observable
+  {{campoObservable}}
+</div>
 
+<button (click)="obtenerPalabras()">Desc</button>
+<div>
+  API {{llamadaApi}}
+</div>
+<div *ngIf="llamadaApi">
+  <ul>
+    <!-- <div *ngFor="let palabra of llamadaApi.words">{{palabra}}</div> -->
+    <div *ngFor="let palabra of palabras5letras">{{palabra}}</div>
+  </ul>
+</div>
 <!-- <div *ngIf="campoTexto.length">
   CampoTexto tiene contenido
 </div>

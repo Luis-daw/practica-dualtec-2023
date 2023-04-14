@@ -1,0 +1,16 @@
+$rojo: red;
+
+.campo-error{
+  color: $rojo;
+}
+.divs-colores{
+  .empezar{
+    color: blue;
+
+    &:first-child{
+      color: green;
+    }
+  }
+}
+
+

@@ -1,0 +1,10 @@
+.campo-error {
+  color: red;
+}
+
+.divs-colores .empezar {
+  color: blue;
+}
+.divs-colores .empezar:first-child {
+  color: green;
+}/*# sourceMappingURL=app.component.css.map */
